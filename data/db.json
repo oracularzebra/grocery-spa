@@ -29,6 +29,26 @@
       "id": 6,
       "checked": false,
       "value": "This is the sixth task"
+    },
+    {
+      "id": 8,
+      "checked": false,
+      "value": "This is the eighth task"
+    },
+    {
+      "id": 9,
+      "checked": false,
+      "value": "This is the ninth task"
+    },
+    {
+      "id": 10,
+      "checked": false,
+      "value": "This is a very very very very very long task testing the effect of long tasks on our app"
+    },
+    {
+      "id": 11,
+      "checked": false,
+      "value": "This "
     }
   ]
 }
