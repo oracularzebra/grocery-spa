@@ -2,33 +2,33 @@
   "item": [
     {
       "id": 1,
-      "checked": true,
-      "value": "we are here"
+      "checked": false,
+      "value": "This is the first task"
     },
     {
       "id": 2,
       "checked": false,
-      "value": "we are there and we are everywhere "
+      "value": "This is the second task"
     },
     {
       "id": 3,
       "checked": false,
-      "value": "we can go there and we can go here"
+      "value": "This is the third task"
     },
     {
       "id": 4,
       "checked": false,
-      "value": "police man is standing right in front of me"
+      "value": "This is the fourth task"
     },
     {
       "id": 5,
       "checked": false,
-      "value": "what am I supposed to do "
+      "value": "This is the fifth task"
     },
     {
       "id": 6,
       "checked": false,
-      "value": "please tell me and I will do it as effectively as I can"
+      "value": "This is the sixth task"
     }
   ]
 }

@@ -97,7 +97,7 @@ function App() {
     setNewTask(e.target.value);
   }
   return (
-    <div>
+    <div className="app">
       <AddItem newItem={newTask} handleChange={handleChange} handleClick={handleAddButton}/>
       <SearchItem search={search} setSearch={setSearch}/>
       <main>
