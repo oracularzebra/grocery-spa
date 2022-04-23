@@ -99,9 +99,10 @@ function App() {
   return (
     <div className="app">
       <AddItem newItem={newTask} handleChange={handleChange} handleClick={handleAddButton}/>
-      <SearchItem search={search} setSearch={setSearch}/>
+      {!isLoading ? (list.length>0) ? <SearchItem search={search} setSearch={setSearch}/>:
+      <h3>All Done !😀</h3>:<p></p>}
       <main>
-        {isLoading && <p>Loading Items</p>}
+        {isLoading && <p>Loading Items...</p>}
         {!isLoading && <List list={list
         .filter(item=>{
           if(item.value.toLowerCase().includes(search.toLowerCase())){

@@ -42,13 +42,19 @@
   justify-content: center;
 }
 .addForm > label > input{
+  text-align:center;
+  border-radius:4px;
+  box-shadow: none;
   padding:1vw;
   flex-grow:2;
   flex-shrink:1;
 }
 .addForm > label > button{
+  border-radius:4px;
+  box-shadow: none;
+  margin-top:2px;
   flex-grow:1;
-padding:0.8vw;
+  padding:0.8vw;
   flex-shrink:2;
 }
 .searchForm{
@@ -58,6 +64,7 @@ padding:0.8vw;
   align-self: stretch;
 }
 .searchForm > input{
+  text-align:center;
   align-self: center;
   padding:.8vw;
   flex-basis:40px;
