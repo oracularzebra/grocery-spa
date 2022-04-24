@@ -8,7 +8,8 @@ export default function List({list, handleCheckButton, handleDeleteButton}){
                         item.checked ? {
                         border:'4px dashed green'
                     }:{
-                        border:'4px solid grey'
+                        border:'4px solid grey',
+                        borderRadius:'5px'
                     }}
                     >
                         <input type="checkbox" 
