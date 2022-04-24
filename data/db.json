@@ -3,7 +3,17 @@
     {
       "id": 1,
       "checked": false,
-      "value": "Buy samosa"
+      "value": "There are many things to do"
+    },
+    {
+      "id": 2,
+      "checked": false,
+      "value": "There are a few important"
+    },
+    {
+      "id": 3,
+      "checked": false,
+      "value": "There are a few which are important for the wellbeing"
     }
   ]
 }
