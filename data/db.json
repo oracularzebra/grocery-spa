@@ -1,3 +1,19 @@
 {
-  "item": []
+  "item": [
+    {
+      "id": 1,
+      "checked": false,
+      "value": "We are trying to do what is necessary"
+    },
+    {
+      "id": 2,
+      "checked": false,
+      "value": "This is the second task"
+    },
+    {
+      "id": 3,
+      "checked": false,
+      "value": "Today we are going to eat a lot of vegetables"
+    }
+  ]
 }

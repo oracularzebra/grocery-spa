@@ -79,22 +79,21 @@
   flex-basis: 40px;
 }
 main {
+  min-width: 50vw;
+  justify-self: flex-end;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 /* Here we are editing list of tasks */
 main > div {
-  width: 50vw;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  /* overflow-x:scroll; */
 }
 main > div > nav {
+  height: 10vh;
   margin: 4px;
   align-self: stretch;
   font-size: large;
