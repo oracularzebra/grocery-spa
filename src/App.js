@@ -54,7 +54,7 @@ function App() {
     };
     const reqUrl = `${API_URL}/${itemId}`;
     const result = await apiRequest(reqUrl, upDateOptions);
-    console.log(myItem);
+ 
   };
 
   async function handleDeleteButton(itemId) {
