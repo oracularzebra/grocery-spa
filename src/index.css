@@ -121,7 +121,7 @@ main > div > nav > button {
   padding: 1vw;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-  transition:background,color 500ms ease 50ms;
+  transition:background,color 500ms,500ms ease 00ms;
 }
 main > div > nav > button:hover {
   background-color: rgba(18, 144, 22, 0.372);
