@@ -3,7 +3,7 @@
     {
       "id": 1,
       "checked": false,
-      "value": "We are trying to do what is necessary"
+      "value": "This is the first task"
     },
     {
       "id": 2,
@@ -13,7 +13,7 @@
     {
       "id": 3,
       "checked": false,
-      "value": "Today we are going to eat a lot of vegetables"
+      "value": "This is the longest task of all the task mentioned before this one a"
     }
   ]
 }

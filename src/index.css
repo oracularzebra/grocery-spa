@@ -93,7 +93,8 @@ main > div {
   align-items: flex-end;
 }
 main > div > nav {
-  height: 10vh;
+  /* height: 10vh; */
+  padding: 2vh;
   margin: 4px;
   align-self: stretch;
   font-size: large;
