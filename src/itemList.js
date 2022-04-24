@@ -6,7 +6,7 @@ export default function List({list, handleCheckButton, handleDeleteButton}){
                 return (
                     <nav key={item.id} style={
                         item.checked ? {
-                        border:'4px dashed green'
+                        border:'4px dashed lightGreen'
                     }:{
                         border:'4px solid grey',
                         borderRadius:'5px'
