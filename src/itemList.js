@@ -4,7 +4,13 @@ export default function List({list, handleCheckButton, handleDeleteButton}){
         <div className="list">
             {list.map((item,index)=>{
                 return (
-                    <nav key={item.id}>
+                    <nav key={item.id} style={
+                        item.checked ? {
+                        border:'4px dashed green'
+                    }:{
+                        border:'4px solid grey'
+                    }}
+                    >
                         <input type="checkbox" 
                         checked={item.checked}
                         onChange={()=>handleCheckButton(item.id)}

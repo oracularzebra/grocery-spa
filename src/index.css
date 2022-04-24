@@ -20,8 +20,8 @@
   align-items: center;
   background: linear-gradient(
     to bottom,
-    rgb(237, 130, 130),
-    rgba(182, 8, 37, 0.756)
+    rgba(182, 8, 37, 0.756) 10%,
+    rgba(8, 78, 182, 0.756)
   );
 }
 /* Editing the inputItem field */
@@ -60,7 +60,7 @@
   flex-grow: 1;
   padding: 0.8vw;
   flex-shrink: 2;
-  transition:background,color 500ms, 500ms ease;
+  transition:background,color 500ms, 1000ms ease;
 }
 .addForm > label > button:hover{
   background-color: greenyellow;
@@ -96,13 +96,20 @@ main > div {
 }
 main > div > nav {
   margin: 4px;
-  border: 4px solid rgb(167, 125, 125);
   align-self: stretch;
   font-size: large;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: inherit;
+  transition-property: border;
+  transition-duration:500ms;
+  transition-timing-function: ease;
+  transition-delay:100ms;
+}
+/* Here we are editing transitions */
+main > div > nav:hover{
+  border:4px  green;
 }
 main > div > nav > input[type="checkbox"] {
   min-width: 4vmax;
