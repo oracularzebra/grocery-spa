@@ -1,5 +1,6 @@
 import { useRef } from "react"
 import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 export default function AddItem({newItem, handleClick, handleChange}){
 
@@ -9,11 +10,16 @@ export default function AddItem({newItem, handleClick, handleChange}){
         <div className="addItem">
             <form className="addForm" onSubmit={handleClick}>
                 <label htmlFor="">
-                    <input type="text"
+                    <TextField type="text"
+                    label='Enter task'
+                    sx={{
+                        // borderRadius:'5px',
+                        textAlign:'center'
+                    }}
+
                     ref={inputRef}
                     autoFocus
                     value={newItem}
-                    placeholder='Input item'
                     onChange={(e)=>handleChange(e)
                     }
                     />
