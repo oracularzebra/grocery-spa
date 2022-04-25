@@ -79,7 +79,7 @@
 }
 main {
   overflow-y:scroll;
-  clip-path: inset(0px .5vw 0px 0px);
+  clip-path: inset(0px 2vw 0px 0px);
 }
 /* Here we are editing list of tasks */
 main > div {
@@ -116,8 +116,8 @@ main > div > nav > button:hover {
   background-color: rgba(18, 144, 22, 0.372);
   color:white;
 }
-@media (max-width:500px) {
+@media (max-width:1000px) {
   main{
-    clip-path: none;
+    clip-path: inset(0px 0vw 0px 0px);
   }
 }
