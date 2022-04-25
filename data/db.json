@@ -1,3 +1,19 @@
 {
-  "item": []
+  "item": [
+    {
+      "id": 1,
+      "checked": false,
+      "value": "Tjere gpoe spir forst tasl"
+    },
+    {
+      "id": 2,
+      "checked": false,
+      "value": "Tjere goes our second task"
+    },
+    {
+      "id": 3,
+      "checked": false,
+      "value": "There goes our third task"
+    }
+  ]
 }

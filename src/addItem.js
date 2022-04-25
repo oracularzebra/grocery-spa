@@ -12,7 +12,7 @@ export default function AddItem({newItem, handleClick, handleChange}){
                 <label htmlFor="">
                     <TextField type="text"
                     label='Enter task'
-                    required='true'
+                    required
                     ref={inputRef}
                     autoFocus
                     value={newItem}

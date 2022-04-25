@@ -1,5 +1,6 @@
 import Checkbox from '@mui/material/Checkbox';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import Fade from '@mui/material/Fade';
 
 export default function List({list, handleCheckButton, handleDeleteButton}){
 
@@ -16,7 +17,7 @@ export default function List({list, handleCheckButton, handleDeleteButton}){
                     }}
                     >
                         <Checkbox size='medium' value={item.checked} onChange={()=>handleCheckButton(item.id)}/>
-                        {item.value.length>0?item.value:'Empty List'}
+                        {item.value}
                         <button
                         onClick={()=>handleDeleteButton(item.id)}>
                         <DeleteForeverIcon fontSize='medium'/>
