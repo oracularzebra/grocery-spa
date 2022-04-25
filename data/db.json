@@ -11,11 +11,6 @@
       "value": "This is the second item"
     },
     {
-      "id": 3,
-      "checked": false,
-      "value": "This is the third item"
-    },
-    {
       "id": 4,
       "checked": false,
       "value": "This is the longest of the item and you may guess it is the most expensive"
@@ -29,6 +24,66 @@
       "id": 6,
       "checked": false,
       "value": "thre"
+    },
+    {
+      "id": 7,
+      "checked": false,
+      "value": "sdf"
+    },
+    {
+      "id": 8,
+      "checked": false,
+      "value": "asdf"
+    },
+    {
+      "id": 9,
+      "checked": false,
+      "value": "fds"
+    },
+    {
+      "id": 10,
+      "checked": false,
+      "value": "asdf"
+    },
+    {
+      "id": 11,
+      "checked": false,
+      "value": "fdsa"
+    },
+    {
+      "id": 12,
+      "checked": false,
+      "value": "asdf"
+    },
+    {
+      "id": 13,
+      "checked": false,
+      "value": "fdsa"
+    },
+    {
+      "id": 14,
+      "checked": false,
+      "value": "asdf"
+    },
+    {
+      "id": 15,
+      "checked": false,
+      "value": "fdsa"
+    },
+    {
+      "id": 16,
+      "checked": false,
+      "value": "sadff"
+    },
+    {
+      "id": 17,
+      "checked": false,
+      "value": "fdsa"
+    },
+    {
+      "id": 18,
+      "checked": false,
+      "value": "asdf"
     }
   ]
 }

@@ -79,7 +79,7 @@
 }
 main {
   overflow-y:scroll;
-  clip-path: inset(0px 2vw 0px 0px);
+  clip-path: inset(0px 1vw 0px 0px);
 }
 /* Here we are editing list of tasks */
 main > div {
