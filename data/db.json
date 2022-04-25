@@ -1,21 +1,6 @@
 {
   "item": [
     {
-      "id": 1,
-      "checked": false,
-      "value": "This is the first item"
-    },
-    {
-      "id": 2,
-      "checked": false,
-      "value": "This is the second item"
-    },
-    {
-      "id": 4,
-      "checked": false,
-      "value": "This is the longest of the item and you may guess it is the most expensive"
-    },
-    {
       "id": 5,
       "checked": false,
       "value": "This is the smallest"
