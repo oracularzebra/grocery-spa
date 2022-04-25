@@ -1,39 +1,29 @@
 {
   "item": [
     {
+      "id": 1,
+      "checked": false,
+      "value": "This is the first item"
+    },
+    {
+      "id": 2,
+      "checked": false,
+      "value": "This is the second item"
+    },
+    {
+      "id": 3,
+      "checked": false,
+      "value": "This is the third item"
+    },
+    {
       "id": 4,
       "checked": false,
-      "value": "There are a few tasks which I would like to do and before dawn"
+      "value": "This is the longest of the item and you may guess it is the most expensive"
     },
     {
       "id": 5,
       "checked": false,
-      "value": "There are a lot "
-    },
-    {
-      "id": 6,
-      "checked": false,
-      "value": "We"
-    },
-    {
-      "id": 7,
-      "checked": false,
-      "value": "We are inserting an item"
-    },
-    {
-      "id": 8,
-      "checked": false,
-      "value": "there"
-    },
-    {
-      "id": 9,
-      "checked": false,
-      "value": "We are once more gathered here"
-    },
-    {
-      "id": 10,
-      "checked": false,
-      "value": "asdf"
+      "value": "This is the smallest"
     }
   ]
 }
