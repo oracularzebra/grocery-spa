@@ -3,17 +3,17 @@
     {
       "id": 1,
       "checked": false,
-      "value": "This is the first task"
+      "value": "there are a few tasks"
     },
     {
       "id": 2,
       "checked": false,
-      "value": "This is the second task"
+      "value": "ther"
     },
     {
       "id": 3,
       "checked": false,
-      "value": "This is the longest task of all the task mentioned before this one a"
+      "value": "There "
     }
   ]
 }

@@ -13,6 +13,7 @@ function App() {
   const [newTask, setNewTask] = useState("");
   // const [fetchError, setFetchError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [foundSearchResult, setFoundSearchResult] = useState(true);
 
   //Runs only for the first time before the render, if we don't define the dependency list.
   //if we define the dependency list then the useEffect will only work when
@@ -99,6 +100,11 @@ function App() {
   function handleChange(e) {
     setNewTask(e.target.value);
   }
+  function handleSearch(e){
+    setSearch(e.target.value);
+    const newList = list.filter(item => item.value.toLowerCase().includes(e.target.value.toLowerCase()));
+    newList.length ? setFoundSearchResult(true):setFoundSearchResult(false);
+  }
   return (
     <div className="app">
       <AddItem
@@ -108,7 +114,7 @@ function App() {
       />
       {!isLoading ? (
         list.length > 0 ? (
-          <SearchItem search={search} setSearch={setSearch} />
+          <SearchItem search={search} handleSearch={handleSearch} />
         ) : (
           <h3>All Done !😀</h3>
         )
@@ -118,17 +124,16 @@ function App() {
       <main>
         {isLoading && <p>Loading Items...</p>}
         {!isLoading && (
-          <List
-            list={list.filter((item) => {
-              if (item.value.toLowerCase().includes(search.toLowerCase())) {
-                return true;
-              } else {
-                return false;
-              }
-            })}
+           foundSearchResult===true ? <List
+            list={list.filter(item => item.value.toLowerCase().includes(search.toLowerCase()))}
             handleCheckButton={handleCheckButton}
             handleDeleteButton={handleDeleteButton}
           />
+          : <h4 style={{
+            textAlign:'center',
+            padding:'4px',
+            marginTop:'5px'
+          }}>Found nothing 😃</h4>
         )}
       </main>
     </div>
