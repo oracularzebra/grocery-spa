@@ -1,3 +1,5 @@
+import Checkbox from '@mui/material/Checkbox';
+
 export default function List({list, handleCheckButton, handleDeleteButton}){
 
     return (
@@ -12,10 +14,11 @@ export default function List({list, handleCheckButton, handleDeleteButton}){
                         borderRadius:'5px'
                     }}
                     >
-                        <input type="checkbox" 
+                        {/* <input type="checkbox" 
                         checked={item.checked}
                         onChange={()=>handleCheckButton(item.id)}
-                        />
+                        /> */}
+                        <Checkbox size='medium' value={item.checked} onChange={()=>handleCheckButton(item.id)}/>
                         {item.value.length>0?item.value:'Empty List'}
                         <button
                         onClick={()=>handleDeleteButton(item.id)}>Delete</button>

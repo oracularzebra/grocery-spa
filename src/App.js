@@ -4,6 +4,8 @@ import List from "./itemList";
 import SearchItem from "./searchItem";
 import { useEffect } from "react";
 import apiRequest from "./apiRequest";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 function App() {
   const API_URL = "http://localhost:3500/item";
@@ -36,7 +38,7 @@ function App() {
     };
     setTimeout(() => {
       fetchItems();
-    }, 1000);
+    }, 200);
   }, []);
 
   const handleCheckButton = async (itemId) => {
@@ -55,7 +57,7 @@ function App() {
     };
     const reqUrl = `${API_URL}/${itemId}`;
     const result = await apiRequest(reqUrl, upDateOptions);
- 
+    
   };
 
   async function handleDeleteButton(itemId) {
@@ -119,10 +121,18 @@ function App() {
           <h3>All Done !😀</h3>
         )
       ) : (
-        <p></p>
+        <p>Loading...</p>
       )}
       <main>
-        {isLoading && <p>Loading Items...</p>}
+        {isLoading && <Box sx={{
+          display:'flex',
+          justifyContent:'left',
+          alignItems:'center',
+          position:'inherit',
+          minHeight:'8vh',
+          padding:'10px',
+          overflow:'hidden',
+        }}><CircularProgress color="primary"/></Box>}
         {!isLoading && (
            foundSearchResult===true ? <List
             list={list.filter(item => item.value.toLowerCase().includes(search.toLowerCase()))}

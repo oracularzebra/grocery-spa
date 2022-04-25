@@ -1,4 +1,6 @@
 import { useRef } from "react"
+import Button from "@mui/material/Button";
+
 export default function AddItem({newItem, handleClick, handleChange}){
 
     const inputRef = useRef();
@@ -15,7 +17,7 @@ export default function AddItem({newItem, handleClick, handleChange}){
                     onChange={(e)=>handleChange(e)
                     }
                     />
-                <button type='submit' onClick={(e)=>inputRef.current.focus()}>Add item</button>
+                <Button variant="contained" size="medium" color="primary" type='submit' onClick={(e)=>inputRef.current.focus()}>Add item</Button>
                 </label>
             </form>
         </div>
