@@ -6,59 +6,42 @@ import { useEffect } from "react";
 import apiRequest from "./apiRequest";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import Axios from "./axiosApi";
+import { ConstructionOutlined } from "@mui/icons-material";
 
 function App() {
-  const API_URL = "http://localhost:3500/item";
 
   const [list, setList] = useState([]);
   const [search, setSearch] = useState("");
   const [newTask, setNewTask] = useState("");
-  // const [fetchError, setFetchError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [foundSearchResult, setFoundSearchResult] = useState(true);
 
-  //Runs only for the first time before the render, if we don't define the dependency list.
-  //if we define the dependency list then the useEffect will only work when
-  //the value inside the list changes.
+
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch(API_URL);
-        if (!response.ok) {
-          throw Error("Did not receive expected data");
-        }
-        const listItems = await response.json();
-        setList(listItems);
-        // setFetchError(null);
+        const request = await Axios();
+        setList(request.data);
       } catch (err) {
-        // setFetchError(err.message);
       } finally {
         setIsLoading(false);
       }
     };
-    setTimeout(() => {
-      fetchItems();
-    }, 200);
+    fetchItems();
   }, []);
 
   const handleCheckButton = async (itemId) => {
-    const newlist = list.map((item) =>
-      item.id === itemId ? { ...item, checked: !item.checked } : item
-    );
-    setList(newlist);
-
-    const myItem = newlist.filter((item) => item.id === itemId);
-    const upDateOptions = {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ checked: myItem[0].checked }),
-    };
-    const reqUrl = `${API_URL}/${itemId}`;
-    const result = await apiRequest(reqUrl, upDateOptions);
     
-  };
+    const newList = list.map(item => item.id === itemId ? {id:itemId, checked:!item.checked, value:item.value}:item);
+    setList(newList);
+    const newItem = newList.find(item=>item.id===itemId);
+    const updatedItem = {id:newItem.id, value:newItem.value, checked:newItem.checked};
+    const request = await Axios({url:`${itemId}`,method:'patch', data:updatedItem});
+    if(request.status > 300){
+      console.log('Please reload the page');
+    }
+  }; 
 
   async function handleDeleteButton(itemId) {
     const newlist = list.filter((item) => {
@@ -69,12 +52,10 @@ function App() {
       }
     });
     setList([...newlist]);
-
-    const deleteOptions = {
-      method: "DELETE",
-    };
-    const reqUrl = `${API_URL}/${itemId}`;
-    const result = await apiRequest(reqUrl, deleteOptions);
+    const request = await Axios({method:'delete', url:`${itemId}`})
+    if(request.status > 300){
+      console.log('Please reload the page');
+    }
   }
 
   const addItem = async (value) => {
@@ -84,14 +65,10 @@ function App() {
     const newList = [...list, newItem];
     setList(newList);
 
-    const postOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newItem),
-    };
-    const result = await apiRequest(API_URL, postOptions);
+    const request = await Axios({method:'post', data:newItem});
+    if(request.status > 300){
+      console.log('Please reload the page');
+    }
   };
   function handleAddButton(e) {
     e.preventDefault();

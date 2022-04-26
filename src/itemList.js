@@ -1,6 +1,5 @@
 import Checkbox from '@mui/material/Checkbox';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import Fade from '@mui/material/Fade';
 
 export default function List({list, handleCheckButton, handleDeleteButton}){
 
