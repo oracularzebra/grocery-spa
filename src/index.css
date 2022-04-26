@@ -34,6 +34,8 @@
   align-items: center;
 }
 .addForm {
+  height: fit-content;
+  min-height:max-content;
   display: flex;
   flex-direction: column;
 }
@@ -115,5 +117,10 @@ main > div > nav > button:hover {
 @media (max-width:1000px) {
   main{
     clip-path: inset(0px 1vw 0px 0px);
+  }
+}
+@media (max-height:500px) {
+  .addItem{
+    padding:15vh;
   }
 }
