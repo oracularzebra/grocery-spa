@@ -75,18 +75,22 @@
   border-radius: 5px;
 
 }
-main {
+/* main {
   overflow-y:scroll;
   clip-path: inset(0px 1vw 0px 0px);
-}
+} */
 /* Here we are editing list of tasks */
-main > div {
+.list {
+  
+  overflow-y: scroll;
+  clip-path: inset(0px 1vw 0px 0px);
   margin-top:4px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch;
+
 }
-main > div > nav {
+.list > nav {
   padding: 1.5vmin;
   margin: 4px;
   align-self: stretch;
@@ -101,7 +105,7 @@ main > div > nav {
   transition-delay:100ms;
 }
 /* Here we are editing the delete button */
-main > div > nav > button {
+.list > nav > button {
   background-color: antiquewhite;
   border-radius: 10%;
   border-width: 0;
@@ -110,14 +114,19 @@ main > div > nav > button {
   font-weight: bold;
   transition:background,color 500ms,500ms ease 00ms;
 }
-main > div > nav > button:hover {
+.list > nav > button:hover {
   background-color: rgba(18, 144, 22, 0.372);
   color:white;
 }
-@media (max-width:1000px) {
-  main{
-    clip-path: inset(0px 1vw 0px 0px);
+@media (max-width:900px) {
+  .list{
+    clip-path: inset(0px 2.0vw 0px 0px);
   }
+}
+@media (max-width:500px) {
+    .list{
+      clip-path: inset(0px 1.0vw 0px 0px);
+    }
 }
 @media (max-height:500px) {
   .addItem{

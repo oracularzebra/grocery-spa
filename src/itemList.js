@@ -5,7 +5,7 @@ export default function List({list, handleCheckButton, handleDeleteButton}){
 
     return (
         <div className="list">
-            {list.map((item,index)=>{
+            {list.map( item => {
                 return (
                     <nav key={item.id} style={
                         item.checked ? {

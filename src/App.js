@@ -3,11 +3,9 @@ import AddItem from "./addItem";
 import List from "./itemList";
 import SearchItem from "./searchItem";
 import { useEffect } from "react";
-import apiRequest from "./apiRequest";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Axios from "./axiosApi";
-import { ConstructionOutlined } from "@mui/icons-material";
 
 function App() {
 
@@ -100,7 +98,7 @@ function App() {
       ) : (
         <p>Loading...</p>
       )}
-      <main>
+      {/* <main> */}
         {isLoading && <Box sx={{
           display:'flex',
           justifyContent:'left',
@@ -122,7 +120,7 @@ function App() {
             marginTop:'5px'
           }}>Found nothing 😃</h4>
         )}
-      </main>
+      {/* </main> */}
     </div>
   );
 }
