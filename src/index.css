@@ -120,7 +120,7 @@
 }
 @media (max-width:900px) {
   .list{
-    clip-path: inset(0px 2.0vw 0px 0px);
+    clip-path: inset(0px 1.5px 0px 0px);
   }
 }
 @media (max-width:500px) {
