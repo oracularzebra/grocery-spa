@@ -118,3 +118,8 @@
     margin-top: 5vh;
   }
 }
+@media (max-height: 500px) {
+  .addItem{
+    padding: 15vh;
+  }
+}
