@@ -14,4 +14,4 @@ data/db.json file as the database.
 There is a scope to implement some type of login system and authenticating the users so 
 the webapp can retain the tasks, which will be stored in a database.
 
-#You can see the live functioning of the site here https://grocery-spa.pages.dev/
+To use the localStorage version visit https://withoutapi.grocery-spa.pages.dev/
