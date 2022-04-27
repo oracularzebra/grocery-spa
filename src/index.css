@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar{
+  width: 0px;
 }
 #root {
   height: 100vh;
@@ -77,11 +81,13 @@
 /* Here we are editing list of tasks */
 .list {
   overflow-y: scroll;
-  clip-path: inset(0px 1vw 0px 0px);
   margin-top: 4px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+}
+.list::-webkit-scrollbar{
+  display: none;
 }
 .list  nav {
   padding: 1.5vmin;
@@ -91,10 +97,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* transition-property: border; */
-  /* transition-duration: 500ms; */
-  /* transition-timing-function: ease; */
-  /* transition-delay: 100ms; */
 }
 /* Here we are editing the delete button */
 .list button {
@@ -110,11 +112,7 @@
   background-color: rgba(18, 144, 22, 0.372);
   color: white;
 }
-@media (max-width: 1000px) {
-  .list {
-    clip-path: inset(0px 12px 0px 0px);
-  }
-}
+
 @media (max-height: 500px) {
   .addItem {
     padding: 15vh;
