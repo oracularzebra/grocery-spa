@@ -14,26 +14,21 @@ export default function ItemList({ list, handleCheckButton, handleDeleteButton }
         return (
           <Collapse
             key={item.id}
-            sx={
+            style={
               item.checked
                 ? {
-                    border: "4px dashed lightGreen",
+                    transition:'border 500ms ease-in 0ms',
+                    border:'4px dashed lightgreen',
+                    marginBottom:'5px',
                   }
                 : {
                     border: "4px solid grey",
                     borderRadius: "5px",
+                    marginBottom:'5px'
                   }
             }
-            style={{
-              margin:'4px',
-            }}
           >
-            <nav style={{
-              display:'flex',
-              justifyContent:'space-between',
-              alignItems:'center',
-              padding:'1.5vh'
-            }}>
+            <nav>
             <Checkbox
               size="medium"
               checked={item.checked}

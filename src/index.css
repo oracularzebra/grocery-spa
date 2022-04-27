@@ -83,7 +83,7 @@
   flex-direction: column;
   align-items: stretch;
 }
-.list > nav {
+.list  nav {
   padding: 1.5vmin;
   margin: 4px;
   align-self: stretch;
@@ -91,11 +91,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: inherit;
-  transition-property: border;
-  transition-duration: 500ms;
-  transition-timing-function: ease;
-  transition-delay: 100ms;
+  /* transition-property: border; */
+  /* transition-duration: 500ms; */
+  /* transition-timing-function: ease; */
+  /* transition-delay: 100ms; */
 }
 /* Here we are editing the delete button */
 .list button {
@@ -116,11 +115,6 @@
     clip-path: inset(0px 12px 0px 0px);
   }
 }
-/* @media (max-width: 500px) {
-  .list {
-    clip-path: inset(0px 12px 0px 0px);
-  } */
-/* } */
 @media (max-height: 500px) {
   .addItem {
     padding: 15vh;

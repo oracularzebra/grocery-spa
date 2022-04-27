@@ -1,29 +1,14 @@
 {
   "item": [
     {
-      "id": 2,
-      "checked": false,
-      "value": "There are a lot of tigers in the jungle "
-    },
-    {
-      "id": 3,
-      "checked": false,
-      "value": "when I woke up today I saw a big white rabbit sleeping on the side of my bed then I thought I must be dreaming"
-    },
-    {
-      "id": 4,
-      "checked": false,
-      "value": "But when I wake up after an hour the rabbit was gone "
-    },
-    {
-      "id": 5,
-      "checked": false,
-      "value": "Now I'm regreting if it could be real and if I have missed something amazing"
-    },
-    {
       "id": 6,
-      "checked": false,
+      "checked": true,
       "value": "There"
+    },
+    {
+      "id": 7,
+      "checked": true,
+      "value": "this is a long task"
     }
   ]
 }
