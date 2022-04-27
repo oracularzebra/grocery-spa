@@ -98,7 +98,7 @@
   transition-delay: 100ms;
 }
 /* Here we are editing the delete button */
-.list > nav > button {
+.list button {
   background-color: antiquewhite;
   border-radius: 10%;
   border-width: 0;
@@ -107,20 +107,20 @@
   font-weight: bold;
   transition: background, color 500ms, 500ms ease 00ms;
 }
-.list > nav > button:hover {
+.list button:hover {
   background-color: rgba(18, 144, 22, 0.372);
   color: white;
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .list {
-    clip-path: inset(0px 1.5px 0px 0px);
+    clip-path: inset(0px 12px 0px 0px);
   }
 }
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .list {
-    clip-path: inset(0px 1vw 0px 0px);
-  }
-}
+    clip-path: inset(0px 12px 0px 0px);
+  } */
+/* } */
 @media (max-height: 500px) {
   .addItem {
     padding: 15vh;

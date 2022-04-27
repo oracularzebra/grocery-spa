@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from "react";
 import AddItem from "./addItem";
-import List from "./itemList";
+import ItemList from "./itemList";
 import SearchItem from "./searchItem";
 import { useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -151,7 +151,7 @@ function App() {
       )}
       {!isLoading &&
         (foundSearchResult === true ? (
-          <List
+          <ItemList
             list={list.filter((item) =>
               item.value.toLowerCase().includes(search.toLowerCase())
             )}
@@ -169,7 +169,6 @@ function App() {
             Found nothing 😃
           </h4>
         ))}
-      {/* </main> */}
     </div>
   );
 }
