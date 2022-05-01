@@ -7,6 +7,9 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
 function App() {
+  
+  let [togglechecked, setToggleChecked] = useState(false);
+  
   const listReducer = (list, action) => {
     switch (action.type) {
       case 'fetch':{
@@ -32,9 +35,13 @@ function App() {
         localStorage.setItem('list', JSON.stringify(newList));
         return newList;
       }
+      case 'reorder':{
+        console.log(action.list)
+        return action.list;
+      }
       default: {
         console.log("Invalid operation");
-        return ;
+        return list;
       }
     }
   };
@@ -46,7 +53,6 @@ function App() {
   const [foundSearchResult, setFoundSearchResult] = useState(true);
 
   useEffect(() => {
-    console.log(JSON.parse(localStorage.getItem('list')))
       dispatch({
         type:'fetch',
         list:JSON.parse(localStorage.getItem('list'))
@@ -54,7 +60,17 @@ function App() {
       setIsLoading(false);
   }, []);
 
+  //It will run each time an item is checked.
+  useEffect(()=>{
+    let newList = list.sort((item1, item2)=>item1.checked-item2.checked);
+    dispatch({
+      type:'reorder',
+      list:newList
+    })
+  }, [togglechecked])
+
   const handleCheckButton = async (itemId) => {
+    setToggleChecked(!togglechecked);
     dispatch({
       type: "checked",
       id: itemId,

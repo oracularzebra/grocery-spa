@@ -1,4 +1,8 @@
 # A  grocery list/ shopping list /todo list
+
+There are two branches the master branch contains axios and fetch implemented
+crud operations and the withoutApi branch uses localStorage for data storage.
+
 Made using the create-react-app npm module, involving react js, node js.
 It is a single-page application having all the basic crud operations written 
 using the javascript fetch API. In a later relese I also implemented the axios for 
