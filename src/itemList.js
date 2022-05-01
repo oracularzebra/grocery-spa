@@ -1,18 +1,14 @@
 import Checkbox from "@mui/material/Checkbox";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import List from '@mui/material/List'
-import { TransitionGroup } from 'react-transition-group'
-import { Collapse } from "@mui/material";
+import FlipMove from 'react-flip-move';
 
 export default function ItemList({ list, handleCheckButton, handleDeleteButton }) {
   
   return (
-    <div className="list">
-      <List>
-        <TransitionGroup>
+    <FlipMove className="list">
           {list.map((item) => {
         return (
-          <Collapse
+          <div
             key={item.id}
             style={
               item.checked
@@ -39,11 +35,9 @@ export default function ItemList({ list, handleCheckButton, handleDeleteButton }
               <DeleteForeverIcon fontSize="medium" />
             </button>
             </nav>
-          </Collapse>
+          </div>
         );
       })}
-        </TransitionGroup>
-      </List>
-    </div>
+    </FlipMove>
   );
 }
