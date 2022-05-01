@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 
-const SearchItem = ({ search, setSearch, handleSearch }) => {
+const SearchItem = ({ search, handleSearch }) => {
   return (
     <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
       <TextField

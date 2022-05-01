@@ -5,20 +5,24 @@ import SearchItem from "./searchItem";
 import { useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-import Axios from "./axiosApi";
 
 function App() {
+  
+  let [togglechecked, setToggleChecked] = useState(false);
+  
   const listReducer = (list, action) => {
     switch (action.type) {
-      case "fetch": {
-        return action.list;
+      case 'fetch':{
+        return action.list || [];
       }
       case "added": {
         const newList = [...list, action.item];
+        localStorage.setItem('list', JSON.stringify(newList));
         return newList;
       }
       case "delete": {
         const newList = list.filter((item) => item.id !== action.id);
+        localStorage.setItem('list', JSON.stringify(newList));
         return newList;
       }
       case "checked": {
@@ -28,11 +32,16 @@ function App() {
             ? { id: itemId, checked: !item.checked, value: item.value }
             : item
         );
-        console.log(newList);
+        localStorage.setItem('list', JSON.stringify(newList));
         return newList;
+      }
+      case 'reorder':{
+        console.log(action.list)
+        return action.list;
       }
       default: {
         console.log("Invalid operation");
+        return list;
       }
     }
   };
@@ -44,36 +53,28 @@ function App() {
   const [foundSearchResult, setFoundSearchResult] = useState(true);
 
   useEffect(() => {
-    const fetchItems = async () => {
-      const request = await Axios();
       dispatch({
-        type: "fetch",
-        list: request.data,
-      });
+        type:'fetch',
+        list:JSON.parse(localStorage.getItem('list'))
+      })
       setIsLoading(false);
-    };
-    fetchItems();
   }, []);
 
+  //It will run each time an item is checked.
+  useEffect(()=>{
+    let newList = list.sort((item1, item2)=>item1.checked-item2.checked);
+    dispatch({
+      type:'reorder',
+      list:newList
+    })
+  }, [togglechecked])
+
   const handleCheckButton = async (itemId) => {
+    setToggleChecked(!togglechecked);
     dispatch({
       type: "checked",
       id: itemId,
     });
-    const newList = list.map((item) =>
-      item.id === itemId
-        ? { id: itemId, checked: !item.checked, value: item.value }
-        : item
-    );
-    const newItem = newList.find((item) => item.id === itemId);
-    const request = await Axios({
-      url: `${itemId}`,
-      method: "patch",
-      data: newItem,
-    });
-    if (request.status > 300) {
-      console.log("Please reload the page");
-    }
   };
 
   async function handleDeleteButton(itemId) {
@@ -81,10 +82,6 @@ function App() {
       type: "delete",
       id: itemId,
     });
-    const request = await Axios({ method: "delete", url: `${itemId}` });
-    if (request.status > 300) {
-      console.log("Please reload the page");
-    }
   }
 
   const addItem = async (value) => {
@@ -96,10 +93,6 @@ function App() {
       id: id,
       item: newItem,
     });
-    const request = await Axios({ method: "post", data: newItem });
-    if (request.status > 300) {
-      console.log("Please reload the page");
-    }
   };
   function handleAddButton(e) {
     e.preventDefault();
